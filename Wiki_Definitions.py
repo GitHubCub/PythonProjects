@@ -3,7 +3,7 @@
 
 # # Wikipedia Definitions
 
-# In[ ]:
+# In[10]:
 
 import urllib
 
@@ -26,6 +26,8 @@ def text_extraction(txt):
     while i != -1:
         i = txt.find("<",j)
         j = txt.find(">",i)
+        if j == -1 or j == len(txt)-1:
+            break
         if not txt[j+1] == "<":
             extract = extract+txt[j+1:txt.find("<",j+1)]
     if txt[-1] == ".":
