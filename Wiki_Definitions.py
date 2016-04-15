@@ -3,11 +3,11 @@
 
 # # Wikipedia Definitions
 
-# In[10]:
+# In[18]:
 
 import urllib
 
-search_term = raw_input("What would you like to know about? (Please enter underscores instead of spaces) \n")
+search_term = raw_input("What would you like to learn about? (Please enter underscores instead of spaces) \n")
 search_url = "https://en.wikipedia.org/wiki/"+search_term
 
 get_wiki = urllib.urlopen(search_url)
@@ -34,5 +34,10 @@ def text_extraction(txt):
         extract = extract+txt[(txt.rfind(">"))+1:]
     return extract        
 
-print text_extraction(trimmed)
+print "\n"+text_extraction(trimmed)
+
+
+# In[ ]:
+
+
 
